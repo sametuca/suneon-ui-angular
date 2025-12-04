@@ -1,0 +1,6 @@
+<button #magneticBtn class="sn-magnetic-btn" [class.sn-btn-primary]="variant === 'primary'"
+    [class.sn-btn-secondary]="variant === 'secondary'" [class.sn-btn-outline]="variant === 'outline'"
+    [class.sn-btn-sm]="size === 'sm'" [class.sn-btn-md]="size === 'md'" [class.sn-btn-lg]="size === 'lg'"
+    [style.transform]="transformStyle">
+    <ng-content></ng-content>
+</button>

@@ -1,0 +1,162 @@
+<div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <div class="section-header">Getting Started</div>
+            <a href="#installation" class="sidebar-link active">Installation</a>
+            <a href="#usage" class="sidebar-link">Usage</a>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="section-header">Components</div>
+            <a href="#" class="sidebar-link">Aurora Background</a>
+            <a href="#" class="sidebar-link">Magnetic Button</a>
+            <a href="#" class="sidebar-link">Shimmer Button</a>
+            <a href="#" class="sidebar-link">Spotlight Card</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="docs-content">
+        <div class="docs-header">
+            <span class="breadcrumb">Getting Started</span>
+            <h1>Installation</h1>
+            <p class="lead">This guide will help you get started with Suneon's neon components in just a few minutes.
+            </p>
+        </div>
+
+        <!-- Prerequisites -->
+        <section class="docs-section">
+            <h2>Prerequisites</h2>
+            <p>Before you can install and use Suneon, make sure your project meets the following requirements:</p>
+
+            <ul class="requirements-list">
+                <li><strong>Angular:</strong> Version 19 or higher.</li>
+                <li><strong>TypeScript:</strong> Version 5.7 or higher.</li>
+            </ul>
+        </section>
+
+        <!-- Installation Steps -->
+        <section class="docs-section">
+            <h2>Install Components</h2>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Initialize an Angular Project</h3>
+                    <p>Suneon is fully compatible with Angular standalone components. To get started, set up your
+                        Angular project:</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Terminal</span>
+                        </div>
+                        <pre><code>ng new my-app --standalone
+cd my-app</code></pre>
+                    </div>
+
+                    <div class="tip">
+                        <span class="tip-icon">💡</span>
+                        <p>If you already have a project compatible with Angular 19+, you can skip this step.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Install Suneon</h3>
+                    <p>Install the Suneon package via npm:</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Terminal</span>
+                        </div>
+                        <pre><code>npm install suneon</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Import Components</h3>
+                    <p>Import and use Suneon components in your Angular application:</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>app.component.ts</span>
+                        </div>
+                        <pre><code>import {{ '{' }} Component {{ '}' }} from '@angular/core';
+import {{ '{' }} MagneticButton, ShimmerButton {{ '}' }} from 'suneon';
+
+@Component({{'{' }}
+  selector: 'app-root',
+  standalone: true,
+  imports: [MagneticButton, ShimmerButton],
+  template: \`
+    &lt;sn-magnetic-button variant="primary"&gt;
+      Click Me
+    &lt;/sn-magnetic-button&gt;
+    
+    &lt;sn-shimmer-button variant="neon"&gt;
+      Neon Glow  
+    &lt;/sn-shimmer-button&gt;
+  \`
+{{ '}' }})
+export class AppComponent {{ '{' }}{{ '}' }}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Add Global Styles (Optional)</h3>
+                    <p>For the best neon effect, add these base styles to your global CSS:</p>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>styles.css</span>
+                        </div>
+                        <pre><code>body {{'{' }}
+  background: #0a0015;
+  color: white;
+  font-family: Inter, sans-serif;
+{{ '}' }}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="docs-section">
+            <h2>Next Steps</h2>
+            <div class="next-steps-grid">
+                <a href="#" class="next-step-card">
+                    <div class="card-icon">📚</div>
+                    <h3>Browse Components</h3>
+                    <p>Explore all available components</p>
+                </a>
+                <a href="#" class="next-step-card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Customize Themes</h3>
+                    <p>Learn about neon color customization</p>
+                </a>
+                <a href="https://github.com" class="next-step-card">
+                    <div class="card-icon">⭐</div>
+                    <h3>GitHub</h3>
+                    <p>Star the repository</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Table of Contents -->
+    <aside class="toc">
+        <div class="toc-header">On This Page</div>
+        <a href="#prerequisites" class="toc-link">Prerequisites</a>
+        <a href="#installation" class="toc-link">Install Components</a>
+        <a href="#usage" class="toc-link">Usage</a>
+    </aside>
+</div>

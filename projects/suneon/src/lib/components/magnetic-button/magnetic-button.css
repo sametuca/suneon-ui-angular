@@ -1,0 +1,93 @@
+.sn-magnetic-btn {
+    position: relative;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    border: 2px solid #00f0ff;
+    background: transparent;
+    color: #00f0ff;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5),
+        inset 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+.sn-magnetic-btn:hover {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.8),
+        0 0 40px rgba(0, 240, 255, 0.6),
+        inset 0 0 20px rgba(0, 240, 255, 0.2);
+    text-shadow: 0 0 10px #00f0ff;
+}
+
+.sn-magnetic-btn:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.8),
+        0 0 40px rgba(0, 240, 255, 0.6),
+        inset 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.sn-btn-primary {
+    border-color: #00f0ff;
+    color: #00f0ff;
+}
+
+.sn-btn-secondary {
+    border-color: #ff00ff;
+    color: #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5),
+        inset 0 0 10px rgba(255, 0, 255, 0.1);
+}
+
+.sn-btn-secondary:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8),
+        0 0 40px rgba(255, 0, 255, 0.6),
+        inset 0 0 20px rgba(255, 0, 255, 0.2);
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.sn-btn-outline {
+    border-color: #39ff14;
+    color: #39ff14;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.5),
+        inset 0 0 10px rgba(57, 255, 20, 0.1);
+}
+
+.sn-btn-outline:hover {
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.8),
+        0 0 40px rgba(57, 255, 20, 0.6),
+        inset 0 0 20px rgba(57, 255, 20, 0.2);
+    text-shadow: 0 0 10px #39ff14;
+}
+
+.sn-btn-sm {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.sn-btn-md {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.sn-btn-lg {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.sn-magnetic-btn:active {
+    transform: scale(0.95) !important;
+}

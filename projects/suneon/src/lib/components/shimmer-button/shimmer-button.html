@@ -1,0 +1,9 @@
+<button class="sn-shimmer-btn" [class.sn-shimmer-default]="variant === 'default'"
+    [class.sn-shimmer-neon]="variant === 'neon'" [class.sn-shimmer-rainbow]="variant === 'rainbow'"
+    [class.sn-btn-sm]="size === 'sm'" [class.sn-btn-md]="size === 'md'" [class.sn-btn-lg]="size === 'lg'"
+    [disabled]="disabled">
+    <span class="sn-shimmer-content">
+        <ng-content></ng-content>
+    </span>
+    <span class="sn-shimmer-effect"></span>
+</button>

@@ -1,0 +1,24 @@
+<div class="sn-aurora-container">
+    <div class="sn-aurora-gradients">
+        @for (color of colors; track $index) {
+        <div class="sn-aurora-gradient"
+            [style.background]="'radial-gradient(circle, ' + color + ' 0%, transparent 70%)'"
+            [style.animation-delay]="$index * 5 + 's'">
+        </div>
+        }
+    </div>
+
+    @if (showParticles) {
+    <div class="sn-particles">
+        @for (particle of particles; track particle.id) {
+        <div class="sn-particle" [style.left.%]="particle.left" [style.top.%]="particle.top"
+            [style.animation-delay]="particle.delay + 's'" [style.animation-duration]="particle.duration + 's'">
+        </div>
+        }
+    </div>
+    }
+
+    <div class="sn-content">
+        <ng-content></ng-content>
+    </div>
+</div>

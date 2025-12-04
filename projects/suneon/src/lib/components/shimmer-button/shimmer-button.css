@@ -1,0 +1,126 @@
+.sn-shimmer-btn {
+    position: relative;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition-property: transform;
+    transition-duration: 200ms;
+}
+
+.sn-shimmer-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgb(59 130 246 / 0.5), 0 0 0 4px rgb(59 130 246 / 0.2);
+}
+
+.sn-shimmer-btn:active {
+    transform: scale(0.95);
+}
+
+.sn-shimmer-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.sn-shimmer-content {
+    position: relative;
+    z-index: 10;
+}
+
+.sn-shimmer-effect {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    animation: shimmer 2.5s infinite;
+}
+
+/* Default Variant */
+.sn-shimmer-default {
+    background-image: linear-gradient(to right, rgb(37, 99, 235), rgb(147, 51, 234));
+    color: white;
+}
+
+.sn-shimmer-default .sn-shimmer-effect {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+/* Neon Variant */
+.sn-shimmer-neon {
+    background-color: black;
+    color: rgb(34, 211, 238);
+    border: 2px solid rgb(34, 211, 238);
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.5), inset 0 0 10px rgba(34, 211, 238, 0.2);
+}
+
+.sn-shimmer-neon .sn-shimmer-effect {
+    background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.6), transparent);
+}
+
+.sn-shimmer-neon:hover {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.8), inset 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+/* Rainbow Variant */
+.sn-shimmer-rainbow {
+    background-image: linear-gradient(to right, rgb(236, 72, 153), rgb(147, 51, 234), rgb(99, 102, 241));
+    color: white;
+    background-size: 200% 100%;
+    animation: rainbow-shift 3s linear infinite;
+}
+
+.sn-shimmer-rainbow .sn-shimmer-effect {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+
+/* Size Variants */
+.sn-btn-sm {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.sn-btn-md {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.sn-btn-lg {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+/* Animations */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes rainbow-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}

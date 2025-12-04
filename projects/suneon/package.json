@@ -1,0 +1,30 @@
+{
+  "name": "suneon",
+  "version": "0.0.1",
+  "description": "Neon-themed Angular UI component library with stunning cyber animations and glow effects",
+  "keywords": [
+    "angular",
+    "ui",
+    "components",
+    "neon",
+    "cyber",
+    "glow",
+    "animations"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/suneon-angular-ui"
+  },
+  "peerDependencies": {
+    "@angular/common": "^20.3.0",
+    "@angular/core": "^20.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
+}
