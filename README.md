@@ -2,22 +2,22 @@
 
 Neon-themed Angular UI component library with stunning cyber animations and glow effects.
 
-## 🎨 Features
+## Features
 
-- ✨ **Neon Aesthetics**: Cyber-punk inspired glowing components  
-- 🌈 **Vibrant Colors**: Cyan, magenta, and neon green palette
-- 🎭 **Modern Animations**: Smooth glow effects and transitions
-- 🎯 **TypeScript**: Full type safety
-- 📦 **Standalone Components**: Angular 19+ compatible
-- 🔧 **Customizable**: Input parameters for every component
+- **Neon Aesthetics**: Cyber-punk inspired glowing components  
+- **Vibrant Colors**: Cyan, magenta, and neon green palette
+- **Modern Animations**: Smooth glow effects and transitions
+- **TypeScript**: Full type safety
+- **Standalone Components**: Angular 19+ compatible
+- **Customizable**: Input parameters for every component
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install suneon
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ```typescript
 import { Component } from '@angular/core';
@@ -42,7 +42,7 @@ import { AuroraBackground, MagneticButton, ShimmerButton, SpotlightCard } from '
 export class AppComponent {}
 ```
 
-## 🧩 Components
+## Components
 
 ### Neon Shimmer Button
 
@@ -85,21 +85,21 @@ Glassmorphic card with neon spotlight effect.
 </sn-spotlight-card>
 ```
 
-## 🎨 Color Palette
+## Color Palette
 
 - **Cyan**: #00f0ff (Primary neon)
 - **Magenta**: #ff00ff (Secondary neon)  
 - **Green**: #00ff00 (Accent neon)
 - **Purple**: #8b00ff (Tertiary)
 
-## 📄 License
+## License
 
 MIT
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Feel free to submit pull requests.
 
 ---
 
-**Suneon** - Light up your Angular apps with neon! ✨🌈
+**Suneon** - Light up your Angular apps with neon!
