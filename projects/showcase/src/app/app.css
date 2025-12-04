@@ -116,15 +116,65 @@
 }
 
 .tech-icon {
-    font-size: 2rem;
-    opacity: 0.6;
-    transition: all 0.3s;
+    width: 64px;
+    height: 64px;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.tech-icon:hover::before {
+    left: 100%;
+}
+
+.tech-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .tech-icon:hover {
     opacity: 1;
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 10px #00f0ff);
+    transform: scale(1.1) translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.tech-icon[title="Angular"]:hover {
+    box-shadow: 0 8px 24px rgba(221, 0, 49, 0.4);
+    border-color: rgba(221, 0, 49, 0.5);
+}
+
+.tech-icon[title="TypeScript"]:hover {
+    box-shadow: 0 8px 24px rgba(49, 120, 198, 0.4);
+    border-color: rgba(49, 120, 198, 0.5);
+}
+
+.tech-icon[title="CSS"]:hover {
+    box-shadow: 0 8px 24px rgba(21, 114, 182, 0.4);
+    border-color: rgba(21, 114, 182, 0.5);
 }
 
 /* Section Title */
