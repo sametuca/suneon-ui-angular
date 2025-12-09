@@ -1,8 +1,40 @@
+/* ========================================
+   NEON TABLE - Cyberpunk Neon Theme
+   ======================================== */
+
 .sn-table-wrapper {
-  border-radius: 12px;
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(0, 240, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  background: linear-gradient(135deg, rgba(10, 10, 30, 0.95) 0%, rgba(20, 10, 40, 0.95) 100%);
+  box-shadow: 
+    0 0 30px rgba(0, 240, 255, 0.3),
+    0 0 60px rgba(0, 240, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.sn-table-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    #00f0ff 20%, 
+    #ff00ff 50%, 
+    #00f0ff 80%, 
+    transparent);
+  animation: neonScan 3s linear infinite;
+}
+
+@keyframes neonScan {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
 }
 
 .sn-table-scrollable {
@@ -15,97 +47,335 @@
 }
 
 .sn-table-scrollable::-webkit-scrollbar-track {
-  background: rgba(0, 240, 255, 0.1);
-}
-
-.sn-table-scrollable::-webkit-scrollbar-thumb {
-  background: rgba(0, 240, 255, 0.5);
+  background: rgba(0, 240, 255, 0.05);
   border-radius: 4px;
 }
 
+.sn-table-scrollable::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00f0ff, #ff00ff);
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
 .sn-table-scrollable::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 240, 255, 0.8);
+  background: linear-gradient(180deg, #00f0ff, #ff00ff);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
 }
 
 .sn-table {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(10, 10, 20, 0.6);
+  background: transparent;
   color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
 }
 
 .sn-table thead {
-  background: rgba(0, 240, 255, 0.15);
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(255, 0, 255, 0.1) 100%);
+  position: relative;
+}
+
+.sn-table thead::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00f0ff, #ff00ff, #00f0ff, transparent);
 }
 
 .sn-table th {
-  padding: 1rem;
+  padding: 1.25rem 1.5rem;
   text-align: left;
-  font-weight: 600;
+  font-weight: 700;
   color: #00f0ff;
-  border-bottom: 2px solid rgba(0, 240, 255, 0.3);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  border-bottom: none;
 }
 
 .sn-table td {
-  padding: 0.875rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sn-table tbody tr {
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .sn-table tbody tr:last-child td {
   border-bottom: none;
 }
 
-/* Striped */
+/* Striped effect */
 .sn-table tbody tr:nth-child(odd) {
-  background: rgba(0, 240, 255, 0.05);
+  background: rgba(0, 240, 255, 0.03);
 }
 
-/* Hover */
+.sn-table tbody tr:nth-child(even) {
+  background: rgba(255, 0, 255, 0.02);
+}
+
+/* Hover effect with neon glow */
 .sn-table tbody tr:hover {
-  background: rgba(0, 240, 255, 0.1);
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.15) 0%, rgba(255, 0, 255, 0.1) 100%);
+  box-shadow: 
+    inset 4px 0 0 #00f0ff,
+    0 0 20px rgba(0, 240, 255, 0.2);
 }
 
-/* Primary variant */
+.sn-table tbody tr:hover td {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   PRIMARY VARIANT (Cyan)
+   ======================================== */
+.sn-table-primary .sn-table-wrapper,
+.sn-table-wrapper.sn-table-primary {
+  border-color: rgba(0, 240, 255, 0.5);
+  box-shadow: 
+    0 0 30px rgba(0, 240, 255, 0.4),
+    0 0 60px rgba(0, 240, 255, 0.15);
+}
+
+.sn-table-primary .sn-table-wrapper::before,
+.sn-table-wrapper.sn-table-primary::before {
+  background: linear-gradient(90deg, transparent, #00f0ff, transparent);
+}
+
 .sn-table-primary th {
   color: #00f0ff;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.7);
 }
 
-.sn-table-primary th {
-  border-bottom-color: rgba(0, 240, 255, 0.5);
+.sn-table-primary tbody tr:hover {
+  background: rgba(0, 240, 255, 0.15);
+  box-shadow: inset 4px 0 0 #00f0ff;
 }
 
-/* Secondary variant */
+/* ========================================
+   SECONDARY VARIANT (Magenta)
+   ======================================== */
+.sn-table-secondary .sn-table-wrapper,
+.sn-table-wrapper.sn-table-secondary {
+  border-color: rgba(255, 0, 255, 0.5);
+  box-shadow: 
+    0 0 30px rgba(255, 0, 255, 0.4),
+    0 0 60px rgba(255, 0, 255, 0.15);
+}
+
+.sn-table-secondary .sn-table-wrapper::before,
+.sn-table-wrapper.sn-table-secondary::before {
+  background: linear-gradient(90deg, transparent, #ff00ff, transparent);
+}
+
 .sn-table-secondary thead {
-  background: rgba(255, 0, 255, 0.15);
+  background: linear-gradient(135deg, rgba(255, 0, 255, 0.2) 0%, rgba(180, 0, 255, 0.15) 100%);
+}
+
+.sn-table-secondary thead::after {
+  background: linear-gradient(90deg, transparent, #ff00ff, #b400ff, #ff00ff, transparent);
 }
 
 .sn-table-secondary th {
   color: #ff00ff;
-  border-bottom-color: rgba(255, 0, 255, 0.5);
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
 }
 
 .sn-table-secondary tbody tr:nth-child(odd) {
-  background: rgba(255, 0, 255, 0.05);
+  background: rgba(255, 0, 255, 0.04);
+}
+
+.sn-table-secondary tbody tr:nth-child(even) {
+  background: rgba(180, 0, 255, 0.03);
 }
 
 .sn-table-secondary tbody tr:hover {
-  background: rgba(255, 0, 255, 0.1);
+  background: linear-gradient(90deg, rgba(255, 0, 255, 0.2) 0%, rgba(180, 0, 255, 0.15) 100%);
+  box-shadow: inset 4px 0 0 #ff00ff;
 }
 
-/* Dark variant */
+.sn-table-secondary .sn-table-scrollable::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff00ff, #b400ff);
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* ========================================
+   SUCCESS VARIANT (Green Neon)
+   ======================================== */
+.sn-table-success .sn-table-wrapper,
+.sn-table-wrapper.sn-table-success {
+  border-color: rgba(57, 255, 20, 0.5);
+  box-shadow: 
+    0 0 30px rgba(57, 255, 20, 0.4),
+    0 0 60px rgba(57, 255, 20, 0.15);
+}
+
+.sn-table-success .sn-table-wrapper::before,
+.sn-table-wrapper.sn-table-success::before {
+  background: linear-gradient(90deg, transparent, #39ff14, transparent);
+}
+
+.sn-table-success thead {
+  background: linear-gradient(135deg, rgba(57, 255, 20, 0.15) 0%, rgba(0, 255, 128, 0.1) 100%);
+}
+
+.sn-table-success thead::after {
+  background: linear-gradient(90deg, transparent, #39ff14, #00ff80, #39ff14, transparent);
+}
+
+.sn-table-success th {
+  color: #39ff14;
+  text-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
+}
+
+.sn-table-success tbody tr:nth-child(odd) {
+  background: rgba(57, 255, 20, 0.04);
+}
+
+.sn-table-success tbody tr:hover {
+  background: rgba(57, 255, 20, 0.15);
+  box-shadow: inset 4px 0 0 #39ff14;
+}
+
+.sn-table-success .sn-table-scrollable::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #39ff14, #00ff80);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+/* ========================================
+   WARNING VARIANT (Orange/Yellow Neon)
+   ======================================== */
+.sn-table-warning .sn-table-wrapper,
+.sn-table-wrapper.sn-table-warning {
+  border-color: rgba(255, 170, 0, 0.5);
+  box-shadow: 
+    0 0 30px rgba(255, 170, 0, 0.4),
+    0 0 60px rgba(255, 170, 0, 0.15);
+}
+
+.sn-table-warning .sn-table-wrapper::before,
+.sn-table-wrapper.sn-table-warning::before {
+  background: linear-gradient(90deg, transparent, #ffaa00, #ffff00, #ffaa00, transparent);
+}
+
+.sn-table-warning thead {
+  background: linear-gradient(135deg, rgba(255, 170, 0, 0.15) 0%, rgba(255, 255, 0, 0.1) 100%);
+}
+
+.sn-table-warning thead::after {
+  background: linear-gradient(90deg, transparent, #ffaa00, #ffff00, #ffaa00, transparent);
+}
+
+.sn-table-warning th {
+  color: #ffaa00;
+  text-shadow: 0 0 15px rgba(255, 170, 0, 0.7);
+}
+
+.sn-table-warning tbody tr:nth-child(odd) {
+  background: rgba(255, 170, 0, 0.04);
+}
+
+.sn-table-warning tbody tr:hover {
+  background: rgba(255, 170, 0, 0.15);
+  box-shadow: inset 4px 0 0 #ffaa00;
+}
+
+.sn-table-warning .sn-table-scrollable::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffaa00, #ffff00);
+  box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+}
+
+/* ========================================
+   DANGER VARIANT (Red Neon)
+   ======================================== */
+.sn-table-danger .sn-table-wrapper,
+.sn-table-wrapper.sn-table-danger {
+  border-color: rgba(255, 0, 64, 0.5);
+  box-shadow: 
+    0 0 30px rgba(255, 0, 64, 0.4),
+    0 0 60px rgba(255, 0, 64, 0.15);
+}
+
+.sn-table-danger .sn-table-wrapper::before,
+.sn-table-wrapper.sn-table-danger::before {
+  background: linear-gradient(90deg, transparent, #ff0040, transparent);
+}
+
+.sn-table-danger thead {
+  background: linear-gradient(135deg, rgba(255, 0, 64, 0.2) 0%, rgba(255, 50, 100, 0.15) 100%);
+}
+
+.sn-table-danger thead::after {
+  background: linear-gradient(90deg, transparent, #ff0040, #ff3264, #ff0040, transparent);
+}
+
+.sn-table-danger th {
+  color: #ff0040;
+  text-shadow: 0 0 15px rgba(255, 0, 64, 0.7);
+}
+
+.sn-table-danger tbody tr:nth-child(odd) {
+  background: rgba(255, 0, 64, 0.04);
+}
+
+.sn-table-danger tbody tr:hover {
+  background: rgba(255, 0, 64, 0.15);
+  box-shadow: inset 4px 0 0 #ff0040;
+}
+
+.sn-table-danger .sn-table-scrollable::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff0040, #ff3264);
+  box-shadow: 0 0 10px rgba(255, 0, 64, 0.5);
+}
+
+/* ========================================
+   DARK VARIANT (Subtle with white accents)
+   ======================================== */
+.sn-table-dark .sn-table-wrapper,
+.sn-table-wrapper.sn-table-dark {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.98) 0%, rgba(10, 10, 20, 0.98) 100%);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.1),
+    0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.sn-table-dark .sn-table-wrapper::before,
+.sn-table-wrapper.sn-table-dark::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+
 .sn-table-dark thead {
-  background: rgba(52, 58, 64, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sn-table-dark thead::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
 }
 
 .sn-table-dark th {
-  color: #f8f9fa;
-  border-bottom-color: rgba(248, 249, 250, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .sn-table-dark tbody tr:nth-child(odd) {
-  background: rgba(248, 249, 250, 0.02);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .sn-table-dark tbody tr:hover {
-  background: rgba(248, 249, 250, 0.05);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 4px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+.sn-table-dark .sn-table-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
