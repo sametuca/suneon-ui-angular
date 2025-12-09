@@ -1,0 +1,260 @@
+<div class="input-page">
+  <div class="content">
+    <div class="content-header">
+      <h1>NeonInput Component</h1>
+      <p>Create elegant, neon-styled form inputs with smooth focus animations. Support for labels, placeholders, multiple input types, and color variants.</p>
+    </div>
+
+    <!-- Variants Section -->
+    <section id="variants" class="component-section">
+      <h2>Color Variants</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="variant-showcase">
+            <sn-neon-input
+              variant="primary"
+              label="Primary"
+              placeholder="Enter primary"
+              [(value)]="primaryValue"
+            ></sn-neon-input>
+            <sn-neon-input
+              variant="secondary"
+              label="Secondary"
+              placeholder="Enter secondary"
+              [(value)]="secondaryValue"
+            ></sn-neon-input>
+            <sn-neon-input
+              variant="success"
+              label="Success"
+              placeholder="Enter success"
+              [(value)]="successValue"
+            ></sn-neon-input>
+            <sn-neon-input
+              variant="danger"
+              label="Danger"
+              placeholder="Enter danger"
+              [(value)]="dangerValue"
+            ></sn-neon-input>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-section">
+        <h3>Properties</h3>
+        <table class="properties-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>label</td>
+              <td>string</td>
+              <td>''</td>
+              <td>Label text displayed above input</td>
+            </tr>
+            <tr>
+              <td>placeholder</td>
+              <td>string</td>
+              <td>''</td>
+              <td>Placeholder text inside input</td>
+            </tr>
+            <tr>
+              <td>type</td>
+              <td>string</td>
+              <td>'text'</td>
+              <td>Input type: text, password, email, number, etc.</td>
+            </tr>
+            <tr>
+              <td>variant</td>
+              <td>string</td>
+              <td>'primary'</td>
+              <td>Color variant: primary, secondary, success, danger</td>
+            </tr>
+            <tr>
+              <td>size</td>
+              <td>string</td>
+              <td>'md'</td>
+              <td>Input size: sm, md, lg</td>
+            </tr>
+            <tr>
+              <td>disabled</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td>Disable input field</td>
+            </tr>
+            <tr>
+              <td>value</td>
+              <td>string</td>
+              <td>''</td>
+              <td>Input value (supports two-way binding with [(value)])</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Input Types Section -->
+    <section id="types" class="component-section">
+      <h2>Input Types</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="type-showcase">
+            <sn-neon-input
+              type="text"
+              label="Username"
+              placeholder="Enter username"
+              [(value)]="primaryValue"
+            ></sn-neon-input>
+
+            <sn-neon-input
+              type="email"
+              label="Email Address"
+              placeholder="Enter email"
+              variant="secondary"
+              [(value)]="emailValue"
+            ></sn-neon-input>
+
+            <sn-neon-input
+              type="password"
+              label="Password"
+              placeholder="Enter password"
+              variant="danger"
+              [(value)]="passwordValue"
+            ></sn-neon-input>
+
+            <sn-neon-input
+              type="number"
+              label="Age"
+              placeholder="Enter your age"
+              variant="success"
+              [(value)]="secondaryValue"
+            ></sn-neon-input>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-section">
+        <h3>Example Usage</h3>
+        <pre><code>&lt;sn-neon-input
+  type="email"
+  label="Email"
+  placeholder="your@email.com"
+  variant="primary"
+  size="md"
+  
+  (onChange)="onEmailChange($event)"
+&gt;&lt;/sn-neon-input&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- Sizes Section -->
+    <section id="sizes" class="component-section">
+      <h2>Size Variants</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="size-showcase">
+            <div class="size-group">
+              <span class="size-label">Small</span>
+              <sn-neon-input
+                size="sm"
+                placeholder="Small input"
+                [(value)]="primaryValue"
+              ></sn-neon-input>
+            </div>
+            <div class="size-group">
+              <span class="size-label">Medium</span>
+              <sn-neon-input
+                size="md"
+                placeholder="Medium input"
+                [(value)]="secondaryValue"
+              ></sn-neon-input>
+            </div>
+            <div class="size-group">
+              <span class="size-label">Large</span>
+              <sn-neon-input
+                size="lg"
+                placeholder="Large input"
+                [(value)]="successValue"
+              ></sn-neon-input>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-section">
+        <h3>Size Properties</h3>
+        <p>Use the <code>size</code> property to control input dimensions:</p>
+        <pre><code>&lt;sn-neon-input size="sm"&gt;&lt;/sn-neon-input&gt;
+&lt;sn-neon-input size="md"&gt;&lt;/sn-neon-input&gt;
+&lt;sn-neon-input size="lg"&gt;&lt;/sn-neon-input&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- Labels & Placeholders Section -->
+    <section id="labels" class="component-section">
+      <h2>Labels & Placeholders</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="label-showcase">
+            <sn-neon-input
+              label="Full Name"
+              placeholder="John Doe"
+              [(value)]="primaryValue"
+            ></sn-neon-input>
+
+            <sn-neon-input
+              label="Company"
+              placeholder="Your company name"
+              variant="secondary"
+              [(value)]="secondaryValue"
+            ></sn-neon-input>
+
+            <sn-neon-input
+              label="Message"
+              placeholder="Type your message..."
+              [(value)]="successValue"
+              variant="success"
+            ></sn-neon-input>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disabled State Section -->
+    <section id="disabled" class="component-section">
+      <h2>Disabled State</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="disabled-showcase">
+            <sn-neon-input
+              label="Disabled Input"
+              [disabled]="true"
+              [value]="disabledValue"
+            ></sn-neon-input>
+
+            <sn-neon-input
+              label="Also Disabled"
+              placeholder="Cannot type here"
+              variant="secondary"
+              [disabled]="true"
+            ></sn-neon-input>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-section">
+        <h3>Disabled Input Example</h3>
+        <pre><code>&lt;sn-neon-input
+  label="Read Only"
+  [disabled]="true"
+  [value]="'Static value'"
+&gt;&lt;/sn-neon-input&gt;</code></pre>
+      </div>
+    </section>
+  </div>
+</div>

@@ -53,12 +53,7 @@
             ],
             "styles": [
               "projects/showcase/src/styles.css"
-            ],
-            "server": "projects/showcase/src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "projects/showcase/src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {

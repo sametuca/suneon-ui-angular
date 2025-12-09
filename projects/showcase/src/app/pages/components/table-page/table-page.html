@@ -1,0 +1,237 @@
+<div class="table-page">
+  <div class="table-page">
+    <div class="content">
+      <h1>NeonTable Component</h1>
+      <p>Display data in elegant, neon-styled tables with scrolling, striping, and hover effects.</p>
+    </div>
+
+    <!-- Variants Section -->
+    <section id="variants" class="component-section">
+      <h2>Table Variants</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="variant-showcase">
+            <div *ngFor="let variant of variants" class="table-wrapper">
+              <h4>{{ variant | titlecase }} Variant</h4>
+              <sn-table [variant]="variant" [striped]="true" [hover]="true">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let row of tableData.slice(0, 3)">
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.email }}</td>
+                    <td>
+                      <span class="status-badge" [class.active]="row.status === 'Active'">
+                        {{ row.status }}
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </sn-table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-section">
+        <h3>Properties</h3>
+        <table class="properties-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>variant</td>
+              <td>string</td>
+              <td>'primary'</td>
+              <td>Color variant: primary, secondary, dark</td>
+            </tr>
+            <tr>
+              <td>striped</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td>Enable striped rows for better readability</td>
+            </tr>
+            <tr>
+              <td>hover</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td>Enable hover effect on rows</td>
+            </tr>
+            <tr>
+              <td>scrollable</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td>Enable horizontal/vertical scrolling</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="component-section">
+      <h2>Complete Example with Data</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <sn-table variant="primary" [striped]="true" [hover]="true" [scrollable]="true">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Joined</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of tableData">
+                <td>{{ row.id }}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.email }}</td>
+                <td>
+                  <span class="status-badge" [class.active]="row.status === 'Active'">
+                    {{ row.status }}
+                  </span>
+                </td>
+                <td>{{ row.joined }}</td>
+              </tr>
+            </tbody>
+          </sn-table>
+        </div>
+      </div>
+
+      <div class="code-section">
+        <h3>Example Usage</h3>
+        <pre><code>&lt;sn-table 
+  variant="primary" 
+  [striped]="true" 
+  [hover]="true"
+  [scrollable]="true"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+      &lt;th&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr *ngFor="let row of tableData"&gt;
+      &lt;td&gt;{{ '{' }}{{ '{' }} row.name {{ '}' }}{{ '}' }}&lt;/td&gt;
+      &lt;td&gt;{{ '{' }}{{ '{' }} row.email {{ '}' }}{{ '}' }}&lt;/td&gt;
+      &lt;td&gt;{{ '{' }}{{ '{' }} row.status {{ '}' }}{{ '}' }}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/sn-table&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- Scrollable Section -->
+    <section id="scrollable" class="component-section">
+      <h2>Scrollable Table</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <sn-table variant="secondary" [striped]="true" [hover]="true" [scrollable]="true">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Country</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+                <td>+1 234 567 8900</td>
+                <td>United States</td>
+                <td><span class="status-badge active">Active</span></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jane</td>
+                <td>Smith</td>
+                <td>jane@example.com</td>
+                <td>+1 234 567 8901</td>
+                <td>United Kingdom</td>
+                <td><span class="status-badge active">Active</span></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Bob</td>
+                <td>Johnson</td>
+                <td>bob@example.com</td>
+                <td>+1 234 567 8902</td>
+                <td>Canada</td>
+                <td><span class="status-badge">Inactive</span></td>
+              </tr>
+            </tbody>
+          </sn-table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Striped Section -->
+    <section id="striped" class="component-section">
+      <h2>Striped Rows</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div>
+              <h4 style="color: #00f0ff; margin-bottom: 1rem;">With Stripes</h4>
+              <sn-table variant="primary" [striped]="true" [hover]="true">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Item 1</td><td>100</td></tr>
+                  <tr><td>Item 2</td><td>200</td></tr>
+                  <tr><td>Item 3</td><td>300</td></tr>
+                  <tr><td>Item 4</td><td>400</td></tr>
+                </tbody>
+              </sn-table>
+            </div>
+            <div>
+              <h4 style="color: #00f0ff; margin-bottom: 1rem;">Without Stripes</h4>
+              <sn-table variant="primary" [striped]="false" [hover]="true">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Item 1</td><td>100</td></tr>
+                  <tr><td>Item 2</td><td>200</td></tr>
+                  <tr><td>Item 3</td><td>300</td></tr>
+                  <tr><td>Item 4</td><td>400</td></tr>
+                </tbody>
+              </sn-table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,20 +1,21 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'sn-input',
+  selector: 'sn-neon-input',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
+  encapsulation: ViewEncapsulation.None,
   template: `
-    <div class="sn-input-group" [class]="'sn-input-' + variant">
+    <div class="sn-input-group" [ngClass]="'sn-input-' + variant">
       <label class="sn-input-label" *ngIf="label">{{ label }}</label>
       <input
         class="sn-input-field"
         [type]="type"
         [placeholder]="placeholder"
-        [(ngModel)]="value"
-        (change)="onChange.emit(value)"
+        [value]="value"
+        (input)="onInputChange($event)"
+        (blur)="onBlur.emit()"
         [disabled]="disabled"
         [class.sn-input-lg]="size === 'lg'"
         [class.sn-input-sm]="size === 'sm'"
@@ -31,6 +32,13 @@ export class NeonInput {
   @Input() variant: 'primary' | 'secondary' | 'success' | 'danger' = 'primary';
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Input() disabled: boolean = false;
-  @Input() value: any = '';
-  @Output() onChange = new EventEmitter<any>();
+  @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
+  @Output() onBlur = new EventEmitter<void>();
+
+  onInputChange(event: Event): void {
+    const inputValue = (event.target as HTMLInputElement).value;
+    this.value = inputValue;
+    this.valueChange.emit(inputValue);
+  }
 }

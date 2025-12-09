@@ -1,0 +1,232 @@
+<div class="modal-page">
+  <div class="modal-page">
+    <div class="content">
+      <h1>NeonModal Component</h1>
+      <p>Create stunning modal dialogs with neon effects, smooth animations, and multiple color variants.</p>
+    </div>
+
+    <!-- Variants Section -->
+    <section id="variants" class="component-section">
+      <h2>Modal Variants</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="button-group">
+            <button class="demo-button primary" (click)="openModal('primary')">
+              Open Primary Modal
+            </button>
+            <button class="demo-button success" (click)="openModal('success')">
+              Open Success Modal
+            </button>
+            <button class="demo-button danger" (click)="openModal('danger')">
+              Open Danger Modal
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary Modal -->
+      <sn-modal
+        [isOpen]="primaryModalOpen"
+        title="Primary Modal"
+        variant="primary"
+        (onClose)="closeModal('primary')"
+        (onConfirmed)="handleConfirm('primary')"
+        [showFooter]="true"
+      >
+        <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+          This is a primary modal dialog. It displays important information and actions with a cyan neon theme.
+          Click the buttons below to interact with the modal.
+        </p>
+      </sn-modal>
+
+      <!-- Success Modal -->
+      <sn-modal
+        [isOpen]="successModalOpen"
+        title="Success Modal"
+        variant="success"
+        (onClose)="closeModal('success')"
+        (onConfirmed)="handleConfirm('success')"
+        [showFooter]="true"
+      >
+        <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+          Operation completed successfully! This modal uses a green neon theme to indicate positive results.
+        </p>
+      </sn-modal>
+
+      <!-- Danger Modal -->
+      <sn-modal
+        [isOpen]="dangerModalOpen"
+        title="Danger Modal"
+        variant="danger"
+        (onClose)="closeModal('danger')"
+        (onConfirmed)="handleConfirm('danger')"
+        [showFooter]="true"
+      >
+        <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+          This action cannot be undone. Are you sure you want to proceed? This modal uses a red neon theme to indicate caution.
+        </p>
+      </sn-modal>
+
+      <div class="code-section">
+        <h3>Properties</h3>
+        <table class="properties-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>isOpen</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td>Controls modal visibility</td>
+            </tr>
+            <tr>
+              <td>title</td>
+              <td>string</td>
+              <td>''</td>
+              <td>Modal header title</td>
+            </tr>
+            <tr>
+              <td>variant</td>
+              <td>string</td>
+              <td>'primary'</td>
+              <td>Color variant: primary, danger, success</td>
+            </tr>
+            <tr>
+              <td>showFooter</td>
+              <td>boolean</td>
+              <td>true</td>
+              <td>Show/hide action buttons</td>
+            </tr>
+            <tr>
+              <td>onClose</td>
+              <td>EventEmitter</td>
+              <td>-</td>
+              <td>Emitted when modal is closed</td>
+            </tr>
+            <tr>
+              <td>onConfirmed</td>
+              <td>EventEmitter</td>
+              <td>-</td>
+              <td>Emitted when confirm button is clicked</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="component-section">
+      <h2>Interactive Examples</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="button-group">
+            <button class="demo-button" (click)="openModal('secondary')">
+              Try Secondary Modal
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary Modal -->
+      <sn-modal
+        [isOpen]="secondaryModalOpen"
+        title="Confirm Action"
+        variant="primary"
+        (onClose)="closeModal('secondary')"
+        (onConfirmed)="handleConfirm('secondary')"
+        [showFooter]="true"
+      >
+        <div style="color: rgba(255, 255, 255, 0.8); line-height: 1.8;">
+          <p><strong>Are you ready?</strong></p>
+          <p>
+            This modal demonstrates content flexibility. You can include forms, lists, images, or any HTML content.
+          </p>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+            <li>Feature 1: Smooth animations</li>
+            <li>Feature 2: Neon glow effects</li>
+            <li>Feature 3: Responsive design</li>
+          </ul>
+        </div>
+      </sn-modal>
+
+      <div class="code-section">
+        <h3>Example Usage</h3>
+        <pre><code>&lt;sn-modal
+  [isOpen]="isModalOpen"
+  title="Confirm Delete"
+  variant="danger"
+  [showFooter]="true"
+  (onClose)="closeModal()"
+  (onConfirmed)="handleDelete()"
+&gt;
+  &lt;p&gt;Are you sure you want to delete this item?&lt;/p&gt;
+  &lt;p&gt;This action cannot be undone.&lt;/p&gt;
+&lt;/sn-modal&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- Animations Section -->
+    <section id="animations" class="component-section">
+      <h2>Animation Features</h2>
+      <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 2rem;">
+        NeonModal includes smooth animations by default:
+      </p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎬</div>
+          <h3>Smooth Entrance</h3>
+          <p>Modal scales and fades in smoothly for a polished appearance</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>Neon Glow</h3>
+          <p>Dynamic glow effects based on the selected color variant</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Backdrop Blur</h3>
+          <p>Frosted glass effect on the background for focus</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Fast Exit</h3>
+          <p>Quick and responsive closing animation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section id="footer" class="component-section">
+      <h2>Modal Footer Actions</h2>
+      <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 2rem;">
+        The modal footer provides two main action buttons:
+      </p>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="action-table">
+            <div class="action-item">
+              <div class="action-icon cancel">✕</div>
+              <div>
+                <h4>Cancel Button</h4>
+                <p>Closes the modal without performing any action</p>
+              </div>
+            </div>
+            <div class="action-item">
+              <div class="action-icon confirm">✓</div>
+              <div>
+                <h4>Confirm Button</h4>
+                <p>Confirms the action and emits onConfirmed event</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

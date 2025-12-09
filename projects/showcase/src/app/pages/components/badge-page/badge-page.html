@@ -1,0 +1,103 @@
+<div class="badge-page">
+  <div class="content">
+    <div class="content-header">
+      <h1>NeonBadge Component</h1>
+      <p>Create vibrant, neon-styled badges for highlighting and categorizing content. Badges support multiple color variants, sizes, and visual effects.</p>
+    </div>
+
+    <!-- Variants Section -->
+    <section id="primary" class="component-section">
+      <h2>All Variants</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="variant-showcase">
+            <sn-neon-badge *ngFor="let variant of variants" [variant]="variant" [size]="'md'">
+              {{ variant | titlecase }}
+            </sn-neon-badge>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-section">
+        <h3>Properties</h3>
+        <table class="properties-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>variant</td>
+              <td>string</td>
+              <td>'primary'</td>
+              <td>Color variant: primary, secondary, success, danger, warning, info</td>
+            </tr>
+            <tr>
+              <td>size</td>
+              <td>string</td>
+              <td>'md'</td>
+              <td>Badge size: sm, md, lg</td>
+            </tr>
+            <tr>
+              <td>rounded</td>
+              <td>boolean</td>
+              <td>true</td>
+              <td>Apply border radius for rounded corners</td>
+            </tr>
+            <tr>
+              <td>glow</td>
+              <td>boolean</td>
+              <td>true</td>
+              <td>Enable neon glow effect</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sizes Section -->
+    <section id="sizes" class="component-section">
+      <h2>Size Variants</h2>
+      <div class="preview-box">
+        <div class="preview-content">
+          <div class="size-showcase">
+            <div class="size-group">
+              <span class="size-label">Small</span>
+              <sn-neon-badge variant="primary" size="sm">Badge</sn-neon-badge>
+            </div>
+            <div class="size-group">
+              <span class="size-label">Medium</span>
+              <sn-neon-badge variant="primary" size="md">Badge</sn-neon-badge>
+            </div>
+            <div class="size-group">
+              <span class="size-label">Large</span>
+              <sn-neon-badge variant="primary" size="lg">Badge</sn-neon-badge>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-section">
+        <h3>Example Usage</h3>
+        <pre><code>&lt;sn-neon-badge variant="success" size="md" [rounded]="true"&gt;
+  New Feature
+&lt;/sn-neon-badge&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- All Color Examples -->
+    <section class="component-section">
+      <h2>Color Examples</h2>
+        <div class="color-grid">
+        <div *ngFor="let variant of variants" class="color-card">
+          <h3>{{ variant | titlecase }}</h3>
+          <sn-neon-badge [variant]="variant" size="md">{{ variant | titlecase }}</sn-neon-badge>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
