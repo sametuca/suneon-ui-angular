@@ -1,0 +1,133 @@
+.sn-input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.sn-input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sn-input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.sn-input-field::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sn-input-field:focus {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.sn-input-field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Primary variant */
+.sn-input-primary .sn-input-label {
+  color: #00f0ff;
+}
+
+.sn-input-primary .sn-input-field {
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.sn-input-primary .sn-input-field:focus {
+  border-color: #00f0ff;
+  box-shadow: 
+    0 0 15px rgba(0, 240, 255, 0.3),
+    inset 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+/* Secondary variant */
+.sn-input-secondary .sn-input-label {
+  color: #ff00ff;
+}
+
+.sn-input-secondary .sn-input-field {
+  border-color: rgba(255, 0, 255, 0.3);
+}
+
+.sn-input-secondary .sn-input-field:focus {
+  border-color: #ff00ff;
+  box-shadow: 
+    0 0 15px rgba(255, 0, 255, 0.3),
+    inset 0 0 10px rgba(255, 0, 255, 0.1);
+}
+
+/* Success variant */
+.sn-input-success .sn-input-label {
+  color: #28a745;
+}
+
+.sn-input-success .sn-input-field {
+  border-color: rgba(40, 167, 69, 0.3);
+}
+
+.sn-input-success .sn-input-field:focus {
+  border-color: #28a745;
+  box-shadow: 
+    0 0 15px rgba(40, 167, 69, 0.3),
+    inset 0 0 10px rgba(40, 167, 69, 0.1);
+}
+
+/* Danger variant */
+.sn-input-danger .sn-input-label {
+  color: #dc3545;
+}
+
+.sn-input-danger .sn-input-field {
+  border-color: rgba(220, 53, 69, 0.3);
+}
+
+.sn-input-danger .sn-input-field:focus {
+  border-color: #dc3545;
+  box-shadow: 
+    0 0 15px rgba(220, 53, 69, 0.3),
+    inset 0 0 10px rgba(220, 53, 69, 0.1);
+}
+
+/* Sizes */
+.sn-input-sm {
+  font-size: 0.875rem;
+}
+
+.sn-input-sm .sn-input-field {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.sn-input-lg .sn-input-field {
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+}
+
+.sn-input-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00f0ff, #ff00ff);
+  transition: width 0.3s ease;
+}
+
+.sn-input-field:focus ~ .sn-input-border {
+  width: 100%;
+}

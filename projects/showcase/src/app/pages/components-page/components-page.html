@@ -1,20 +1,64 @@
 <div class="docs-layout">
-    <!-- Sidebar -->
     <aside class="sidebar">
-        <div class="sidebar-section">
-            <div class="section-header">Components</div>
-            <a routerLink="aurora" routerLinkActive="active" class="sidebar-link">Aurora Background</a>
-            <a routerLink="magnetic-button" routerLinkActive="active" class="sidebar-link">Magnetic Button</a>
-            <a routerLink="shimmer-button" routerLinkActive="active" class="sidebar-link">Shimmer Button</a>
-            <a routerLink="spotlight-card" routerLinkActive="active" class="sidebar-link">Spotlight Card</a>
+        <div class="sidebar-wrapper">
+            <div class="sidebar-glow"></div>
+            <div class="sidebar-content">
+                <!-- Buttons Category -->
+                <div class="sidebar-category">
+                    <div class="category-header">
+                        <span class="category-icon"></span>
+                        <span class="category-text">Buttons</span>
+                        <div class="category-line"></div>
+                    </div>
+                    <nav class="nav-links">
+                        <a routerLink="buttons" routerLinkActive="active" class="sidebar-link">
+                            <span class="link-bg"></span>
+                            <span class="link-dot"></span>
+                            <span class="link-text">All Buttons</span>
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Backgrounds Category -->
+                <div class="sidebar-category">
+                    <div class="category-header">
+                        <span class="category-icon"></span>
+                        <span class="category-text">Backgrounds</span>
+                        <div class="category-line"></div>
+                    </div>
+                    <nav class="nav-links">
+                        <a routerLink="aurora" routerLinkActive="active" class="sidebar-link">
+                            <span class="link-bg"></span>
+                            <span class="link-dot"></span>
+                            <span class="link-text">Aurora Background</span>
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Cards Category -->
+                <div class="sidebar-category">
+                    <div class="category-header">
+                        <span class="category-icon"></span>
+                        <span class="category-text">Cards</span>
+                        <div class="category-line"></div>
+                    </div>
+                    <nav class="nav-links">
+                        <a routerLink="spotlight-card" routerLinkActive="active" class="sidebar-link">
+                            <span class="link-bg"></span>
+                            <span class="link-dot"></span>
+                            <span class="link-text">Spotlight Card</span>
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
         </div>
     </aside>
 
-    <!-- Main Content -->
     <main class="docs-content">
         <router-outlet></router-outlet>
     </main>
 
-    <!-- TOC (Optional, maybe remove or make dynamic later) -->
-    <!-- For now, removing global TOC as it depends on the active page -->
 </div>

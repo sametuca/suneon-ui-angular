@@ -10,7 +10,8 @@ import { RouterOutlet, RouterLink } from '@angular/router';
       <header class="header">
         <div class="logo">
           <a routerLink="/" class="logo-link">
-            <span class="logo-text">⚡ Suneon</span>
+            <img src="favicon.png" alt="Suneon" class="logo-icon" />
+            <span class="logo-text">Suneon</span>
           </a>
         </div>
         <nav class="nav">
@@ -57,7 +58,23 @@ import { RouterOutlet, RouterLink } from '@angular/router';
     }
 
     .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .logo-link:hover .logo-icon {
+      filter: brightness(0) invert(1) drop-shadow(0 0 20px rgba(0, 240, 255, 1)) drop-shadow(0 0 30px rgba(0, 240, 255, 0.6));
+      transform: scale(1.1);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(0, 240, 255, 0.8));
+      transition: all 0.3s ease;
     }
 
     .logo-text {
@@ -65,6 +82,11 @@ import { RouterOutlet, RouterLink } from '@angular/router';
       font-weight: bold;
       color: #00f0ff;
       text-shadow: 0 0 10px #00f0ff;
+      transition: all 0.3s ease;
+    }
+
+    .logo-link:hover .logo-text {
+      text-shadow: 0 0 15px #00f0ff;
     }
 
     .nav {

@@ -1,0 +1,111 @@
+.sn-table-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.sn-table-scrollable {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.sn-table-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sn-table-scrollable::-webkit-scrollbar-track {
+  background: rgba(0, 240, 255, 0.1);
+}
+
+.sn-table-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.5);
+  border-radius: 4px;
+}
+
+.sn-table-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.8);
+}
+
+.sn-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(10, 10, 20, 0.6);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sn-table thead {
+  background: rgba(0, 240, 255, 0.15);
+}
+
+.sn-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #00f0ff;
+  border-bottom: 2px solid rgba(0, 240, 255, 0.3);
+}
+
+.sn-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sn-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Striped */
+.sn-table tbody tr:nth-child(odd) {
+  background: rgba(0, 240, 255, 0.05);
+}
+
+/* Hover */
+.sn-table tbody tr:hover {
+  background: rgba(0, 240, 255, 0.1);
+}
+
+/* Primary variant */
+.sn-table-primary th {
+  color: #00f0ff;
+}
+
+.sn-table-primary th {
+  border-bottom-color: rgba(0, 240, 255, 0.5);
+}
+
+/* Secondary variant */
+.sn-table-secondary thead {
+  background: rgba(255, 0, 255, 0.15);
+}
+
+.sn-table-secondary th {
+  color: #ff00ff;
+  border-bottom-color: rgba(255, 0, 255, 0.5);
+}
+
+.sn-table-secondary tbody tr:nth-child(odd) {
+  background: rgba(255, 0, 255, 0.05);
+}
+
+.sn-table-secondary tbody tr:hover {
+  background: rgba(255, 0, 255, 0.1);
+}
+
+/* Dark variant */
+.sn-table-dark thead {
+  background: rgba(52, 58, 64, 0.4);
+}
+
+.sn-table-dark th {
+  color: #f8f9fa;
+  border-bottom-color: rgba(248, 249, 250, 0.3);
+}
+
+.sn-table-dark tbody tr:nth-child(odd) {
+  background: rgba(248, 249, 250, 0.02);
+}
+
+.sn-table-dark tbody tr:hover {
+  background: rgba(248, 249, 250, 0.05);
+}

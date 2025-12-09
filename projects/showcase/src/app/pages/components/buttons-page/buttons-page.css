@@ -1,0 +1,197 @@
+.docs-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.breadcrumb {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.docs-header h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    background: linear-gradient(135deg, #00f0ff 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.lead {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+}
+
+.component-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    margin-bottom: 2rem;
+}
+
+.section-title h2 {
+    font-size: 1.875rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 240, 255, 0.3) 20%,
+        rgba(168, 85, 247, 0.3) 80%,
+        transparent 100%
+    );
+    margin: 4rem 0;
+    position: relative;
+}
+
+.section-divider::before {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00f0ff;
+    font-size: 1.5rem;
+    background: #0a0a1a;
+    padding: 0 1rem;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.8);
+}
+
+.preview-box {
+    background: rgba(15, 15, 30, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    min-height: 200px;
+    justify-content: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.code-block {
+    background: rgba(10, 10, 20, 0.8);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.code-header {
+    background: rgba(0, 240, 255, 0.1);
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #00f0ff;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 1.5rem 1.25rem;
+    overflow-x: auto;
+}
+
+.code-block code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.props-section {
+    margin-top: 2rem;
+}
+
+.props-section h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.props-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(10, 10, 20, 0.6);
+}
+
+.props-table thead {
+    background: rgba(0, 240, 255, 0.1);
+}
+
+.props-table th {
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #00f0ff;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.props-table td {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.props-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.props-table tbody tr:hover {
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.props-table code {
+    background: rgba(0, 240, 255, 0.1);
+    color: #00f0ff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .docs-header h1 {
+        font-size: 2rem;
+    }
+    
+    .preview-box {
+        padding: 2rem 1rem;
+    }
+    
+    .button-group {
+        gap: 1rem;
+    }
+}

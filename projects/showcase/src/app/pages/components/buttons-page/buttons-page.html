@@ -1,0 +1,283 @@
+<div class="docs-header">
+    <span class="breadcrumb">Components</span>
+    <h1>Buttons</h1>
+    <p class="lead">Collection of interactive neon-themed button components with stunning animations.</p>
+</div>
+
+<!-- Magnetic Button Section -->
+<section class="component-section">
+    <div class="section-title">
+        <h2>Magnetic Button</h2>
+        <p class="section-description">Interactive button that magnetically pulls towards the cursor.</p>
+    </div>
+    
+    <div class="preview-box">
+        <div class="button-group">
+            <sn-magnetic-button variant="primary" size="sm" [magnetic]="true">Small</sn-magnetic-button>
+            <sn-magnetic-button variant="primary" [magnetic]="true">Primary</sn-magnetic-button>
+            <sn-magnetic-button variant="primary" size="lg" [magnetic]="true">Large</sn-magnetic-button>
+        </div>
+        <div class="button-group">
+            <sn-magnetic-button variant="secondary" [magnetic]="true">Secondary</sn-magnetic-button>
+            <sn-magnetic-button variant="outline" [magnetic]="true">Outline</sn-magnetic-button>
+        </div>
+        <div class="button-group">
+            <sn-magnetic-button variant="primary" [magnetic]="false">Non-Magnetic</sn-magnetic-button>
+        </div>
+    </div>
+
+    <div class="code-block">
+        <div class="code-header">HTML</div>
+        <pre><code>&lt;!-- With magnetic effect (default) --&gt;
+&lt;sn-magnetic-button variant="primary" [magnetic]="true"&gt;
+  Magnetic Button
+&lt;/sn-magnetic-button&gt;
+
+&lt;!-- Without magnetic effect --&gt;
+&lt;sn-magnetic-button variant="primary" [magnetic]="false"&gt;
+  Normal Button
+&lt;/sn-magnetic-button&gt;</code></pre>
+    </div>
+
+    <div class="props-section">
+        <h3>Properties</h3>
+        <div class="table-container">
+            <table class="props-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>magnetic</code></td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Enable/disable magnetic effect</td>
+                    </tr>
+                    <tr>
+                        <td><code>variant</code></td>
+                        <td>'primary' | 'secondary' | 'outline'</td>
+                        <td>'primary'</td>
+                        <td>The visual style of the button</td>
+                    </tr>
+                    <tr>
+                        <td><code>size</code></td>
+                        <td>'sm' | 'md' | 'lg'</td>
+                        <td>'md'</td>
+                        <td>The size of the button</td>
+                    </tr>
+                    <tr>
+                        <td><code>strength</code></td>
+                        <td>number</td>
+                        <td>0.3</td>
+                        <td>Magnetic pull strength (0-1, only when magnetic=true)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Shimmer Button Section -->
+<section class="component-section">
+    <div class="section-title">
+        <h2>Shimmer Button</h2>
+        <p class="section-description">Button with a continuous animated neon shimmer effect.</p>
+    </div>
+    
+    <div class="preview-box">
+        <div class="button-group">
+            <sn-shimmer-button variant="default">Default Shimmer</sn-shimmer-button>
+            <sn-shimmer-button variant="neon">Neon Shimmer</sn-shimmer-button>
+            <sn-shimmer-button variant="rainbow">Rainbow Shimmer</sn-shimmer-button>
+        </div>
+    </div>
+
+    <div class="code-block">
+        <div class="code-header">HTML</div>
+        <pre><code>&lt;sn-shimmer-button variant="neon"&gt;
+  Neon Glow
+&lt;/sn-shimmer-button&gt;</code></pre>
+    </div>
+
+    <div class="props-section">
+        <h3>Properties</h3>
+        <div class="table-container">
+            <table class="props-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>variant</code></td>
+                        <td>'default' | 'neon' | 'rainbow'</td>
+                        <td>'default'</td>
+                        <td>The color theme of the shimmer effect</td>
+                    </tr>
+                    <tr>
+                        <td><code>size</code></td>
+                        <td>'sm' | 'md' | 'lg'</td>
+                        <td>'md'</td>
+                        <td>The size of the button</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>Disables the button</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Neon Badge Section -->
+<section class="component-section">
+    <div class="section-title">
+        <h2>💎 Neon Badge</h2>
+        <p class="section-description">Neon-themed badges with multiple color variants and glow effects.</p>
+    </div>
+    
+    <div class="preview-box">
+        <div class="button-group">
+            <sn-badge variant="primary">Primary</sn-badge>
+            <sn-badge variant="secondary">Secondary</sn-badge>
+            <sn-badge variant="success">Success</sn-badge>
+            <sn-badge variant="danger">Danger</sn-badge>
+            <sn-badge variant="warning">Warning</sn-badge>
+            <sn-badge variant="info">Info</sn-badge>
+        </div>
+    </div>
+
+    <div class="code-block">
+        <div class="code-header">HTML</div>
+        <pre><code>&lt;sn-badge variant="primary"&gt;Primary&lt;/sn-badge&gt;
+&lt;sn-badge variant="success"&gt;Success&lt;/sn-badge&gt;
+&lt;sn-badge variant="danger"&gt;Danger&lt;/sn-badge&gt;</code></pre>
+    </div>
+
+    <div class="props-section">
+        <h3>Properties</h3>
+        <div class="table-container">
+            <table class="props-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>variant</code></td>
+                        <td>'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info'</td>
+                        <td>'primary'</td>
+                        <td>Color theme of the badge</td>
+                    </tr>
+                    <tr>
+                        <td><code>size</code></td>
+                        <td>'sm' | 'md' | 'lg'</td>
+                        <td>'md'</td>
+                        <td>Badge size</td>
+                    </tr>
+                    <tr>
+                        <td><code>rounded</code></td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Enable rounded corners</td>
+                    </tr>
+                    <tr>
+                        <td><code>glow</code></td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Enable glow effect</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Neon Input Section -->
+<section class="component-section">
+    <div class="section-title">
+        <h2>⚡ Neon Input</h2>
+        <p class="section-description">Neon-themed form input with focus animations and color variants.</p>
+    </div>
+    
+    <div class="preview-box">
+        <div style="width: 100%; max-width: 400px;">
+            <sn-input label="Primary Input" placeholder="Enter text..." variant="primary"></sn-input>
+            <sn-input label="Success Input" placeholder="Success input..." variant="success"></sn-input>
+            <sn-input label="Danger Input" placeholder="Danger input..." variant="danger"></sn-input>
+        </div>
+    </div>
+
+    <div class="code-block">
+        <div class="code-header">HTML</div>
+        <pre><code>&lt;sn-input 
+  label="Name" 
+  placeholder="Enter your name..." 
+  variant="primary"&gt;
+&lt;/sn-input&gt;</code></pre>
+    </div>
+
+    <div class="props-section">
+        <h3>Properties</h3>
+        <div class="table-container">
+            <table class="props-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>label</code></td>
+                        <td>string</td>
+                        <td>''</td>
+                        <td>Input label text</td>
+                    </tr>
+                    <tr>
+                        <td><code>placeholder</code></td>
+                        <td>string</td>
+                        <td>''</td>
+                        <td>Input placeholder text</td>
+                    </tr>
+                    <tr>
+                        <td><code>variant</code></td>
+                        <td>'primary' | 'secondary' | 'success' | 'danger'</td>
+                        <td>'primary'</td>
+                        <td>Color theme</td>
+                    </tr>
+                    <tr>
+                        <td><code>size</code></td>
+                        <td>'sm' | 'md' | 'lg'</td>
+                        <td>'md'</td>
+                        <td>Input size</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

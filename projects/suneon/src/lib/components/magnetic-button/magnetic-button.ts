@@ -11,15 +11,16 @@ import { CommonModule } from '@angular/common';
 export class MagneticButton {
   @ViewChild('magneticBtn', { static: false }) buttonRef!: ElementRef;
 
+  @Input() magnetic: boolean = true;
   @Input() strength: number = 0.3;
-  @Input() variant: 'primary' | 'secondary' | 'outline' = 'primary';
+  @Input() variant: 'primary' | 'secondary' | 'outline' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' = 'primary';
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
 
   transformStyle = '';
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-    if (!this.buttonRef) return;
+    if (!this.magnetic || !this.buttonRef) return;
 
     const btn = this.buttonRef.nativeElement;
     const rect = btn.getBoundingClientRect();
