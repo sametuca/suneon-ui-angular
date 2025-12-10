@@ -1,0 +1,301 @@
+<div class="dropdown-page">
+  <div class="content">
+    <div class="content-header">
+      <h1>Dropdown</h1>
+      <p>Neon-styled dropdown menus with glowing effects, multiple variants, and smooth animations.</p>
+    </div>
+
+    <!-- Basic Dropdown -->
+    <section class="demo-section">
+      <h2>Basic Dropdown</h2>
+      <p class="section-description">A simple dropdown with basic options.</p>
+      <div class="demo-container">
+        <sn-dropdown
+          [items]="basicItems"
+          placeholder="Select an option"
+          [(value)]="selectedBasic"
+          (selectionChange)="onSelectionChange($event)">
+        </sn-dropdown>
+        <span class="selected-value" *ngIf="selectedBasic">Selected: {{ selectedBasic }}</span>
+      </div>
+    </section>
+
+    <!-- With Icons -->
+    <section class="demo-section">
+      <h2>With Icons</h2>
+      <p class="section-description">Dropdown items can include icons for better visual representation.</p>
+      <div class="demo-container">
+        <sn-dropdown
+          [items]="iconItems"
+          placeholder="Choose action"
+          [(value)]="selectedIcon">
+        </sn-dropdown>
+      </div>
+    </section>
+
+    <!-- Color Variants -->
+    <section class="demo-section">
+      <h2>Color Variants</h2>
+      <p class="section-description">Different color variants for various contexts.</p>
+      <div class="demo-container variants-grid">
+        <div class="variant-item">
+          <span class="variant-label">Primary</span>
+          <sn-dropdown
+            [items]="basicItems"
+            variant="primary"
+            placeholder="Primary">
+          </sn-dropdown>
+        </div>
+        <div class="variant-item">
+          <span class="variant-label">Secondary</span>
+          <sn-dropdown
+            [items]="basicItems"
+            variant="secondary"
+            placeholder="Secondary">
+          </sn-dropdown>
+        </div>
+        <div class="variant-item">
+          <span class="variant-label">Success</span>
+          <sn-dropdown
+            [items]="basicItems"
+            variant="success"
+            placeholder="Success">
+          </sn-dropdown>
+        </div>
+        <div class="variant-item">
+          <span class="variant-label">Warning</span>
+          <sn-dropdown
+            [items]="basicItems"
+            variant="warning"
+            placeholder="Warning">
+          </sn-dropdown>
+        </div>
+        <div class="variant-item">
+          <span class="variant-label">Danger</span>
+          <sn-dropdown
+            [items]="basicItems"
+            variant="danger"
+            placeholder="Danger">
+          </sn-dropdown>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sizes -->
+    <section class="demo-section">
+      <h2>Sizes</h2>
+      <p class="section-description">Available in three sizes: small, medium, and large.</p>
+      <div class="demo-container sizes-row">
+        <div class="size-item">
+          <span class="size-label">Small</span>
+          <sn-dropdown
+            [items]="basicItems"
+            size="sm"
+            placeholder="Small">
+          </sn-dropdown>
+        </div>
+        <div class="size-item">
+          <span class="size-label">Medium</span>
+          <sn-dropdown
+            [items]="basicItems"
+            size="md"
+            placeholder="Medium">
+          </sn-dropdown>
+        </div>
+        <div class="size-item">
+          <span class="size-label">Large</span>
+          <sn-dropdown
+            [items]="basicItems"
+            size="lg"
+            placeholder="Large">
+          </sn-dropdown>
+        </div>
+      </div>
+    </section>
+
+    <!-- With Dividers -->
+    <section class="demo-section">
+      <h2>With Dividers</h2>
+      <p class="section-description">Separate groups of options with dividers.</p>
+      <div class="demo-container">
+        <sn-dropdown
+          [items]="actionItems"
+          placeholder="Actions"
+          variant="danger">
+        </sn-dropdown>
+      </div>
+    </section>
+
+    <!-- Disabled Items -->
+    <section class="demo-section">
+      <h2>Disabled Items</h2>
+      <p class="section-description">Individual items can be disabled.</p>
+      <div class="demo-container">
+        <sn-dropdown
+          [items]="disabledItems"
+          placeholder="Some options disabled">
+        </sn-dropdown>
+      </div>
+    </section>
+
+    <!-- Disabled State -->
+    <section class="demo-section">
+      <h2>Disabled Dropdown</h2>
+      <p class="section-description">The entire dropdown can be disabled.</p>
+      <div class="demo-container">
+        <sn-dropdown
+          [items]="basicItems"
+          [disabled]="true"
+          placeholder="Disabled dropdown">
+        </sn-dropdown>
+      </div>
+    </section>
+
+    <!-- Open Direction -->
+    <section class="demo-section">
+      <h2>Open Direction</h2>
+      <p class="section-description">Dropdown can open upwards when needed.</p>
+      <div class="demo-container direction-row">
+        <div class="direction-item">
+          <span class="direction-label">Opens Down (Default)</span>
+          <sn-dropdown
+            [items]="basicItems"
+            openDirection="down"
+            placeholder="Opens down">
+          </sn-dropdown>
+        </div>
+        <div class="direction-item up-container">
+          <span class="direction-label">Opens Up</span>
+          <sn-dropdown
+            [items]="basicItems"
+            openDirection="up"
+            placeholder="Opens up">
+          </sn-dropdown>
+        </div>
+      </div>
+    </section>
+
+    <!-- API Reference -->
+    <section class="demo-section">
+      <h2>API Reference</h2>
+      <div class="api-table">
+        <h3>Inputs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>items</code></td>
+              <td><code>DropdownItem[]</code></td>
+              <td><code>[]</code></td>
+              <td>Array of dropdown options</td>
+            </tr>
+            <tr>
+              <td><code>value</code></td>
+              <td><code>any</code></td>
+              <td><code>null</code></td>
+              <td>Currently selected value (two-way binding)</td>
+            </tr>
+            <tr>
+              <td><code>placeholder</code></td>
+              <td><code>string</code></td>
+              <td><code>'Select an option'</code></td>
+              <td>Placeholder text when nothing is selected</td>
+            </tr>
+            <tr>
+              <td><code>variant</code></td>
+              <td><code>'primary' | 'secondary' | 'success' | 'warning' | 'danger'</code></td>
+              <td><code>'primary'</code></td>
+              <td>Color variant</td>
+            </tr>
+            <tr>
+              <td><code>size</code></td>
+              <td><code>'sm' | 'md' | 'lg'</code></td>
+              <td><code>'md'</code></td>
+              <td>Size variant</td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>Disables the dropdown</td>
+            </tr>
+            <tr>
+              <td><code>openDirection</code></td>
+              <td><code>'down' | 'up'</code></td>
+              <td><code>'down'</code></td>
+              <td>Direction the menu opens</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Outputs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>valueChange</code></td>
+              <td><code>EventEmitter&lt;any&gt;</code></td>
+              <td>Emitted when value changes (for two-way binding)</td>
+            </tr>
+            <tr>
+              <td><code>selectionChange</code></td>
+              <td><code>EventEmitter&lt;DropdownItem&gt;</code></td>
+              <td>Emitted with the full item object when selection changes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>DropdownItem Interface</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>label</code></td>
+              <td><code>string</code></td>
+              <td>Display text for the option</td>
+            </tr>
+            <tr>
+              <td><code>value</code></td>
+              <td><code>any</code></td>
+              <td>Value associated with the option</td>
+            </tr>
+            <tr>
+              <td><code>icon</code></td>
+              <td><code>string</code></td>
+              <td>Optional icon (emoji or text)</td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td><code>boolean</code></td>
+              <td>Whether the option is disabled</td>
+            </tr>
+            <tr>
+              <td><code>divider</code></td>
+              <td><code>boolean</code></td>
+              <td>Renders a divider instead of an option</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

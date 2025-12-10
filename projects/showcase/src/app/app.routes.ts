@@ -9,6 +9,7 @@ import { InputPageComponent } from './pages/components/input-page/input-page';
 import { TablePageComponent } from './pages/components/table-page/table-page';
 import { ModalPageComponent } from './pages/components/modal-page/modal-page';
 import { SpotlightCardPageComponent } from './pages/components/spotlight-card-page/spotlight-card-page';
+import { DropdownPage } from './pages/components/dropdown-page/dropdown-page';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -21,6 +22,7 @@ export const routes: Routes = [
             { path: 'buttons', component: ButtonsPageComponent },
             { path: 'badges', component: BadgePageComponent },
             { path: 'inputs', component: InputPageComponent },
+            { path: 'dropdowns', component: DropdownPage },
             { path: 'tables', component: TablePageComponent },
             { path: 'modals', component: ModalPageComponent },
             { path: 'aurora', component: AuroraPageComponent },
